@@ -1,3 +1,42 @@
-<iframe src="first-presentation.sozi.html">
+<iframe src="my-presentation.sozi.html">
     My Sozi presentation should play here.
 </iframe>
+
+<script>
+    window.addEventListener("load", function () {
+        document.querySelector("iframe").focus();
+    }, false);
+</script>
+
+<input id="btn-prev" type="button" value="&larr;" title="Move to the previous frame">
+<span  id="frame-title">Loading&hellip;</span>
+<input id="btn-next" type="button" value="&rarr;" title="Move to the next frame">
+
+<iframe src="my-presentation.sozi.html">
+    My Sozi presentation should play here.
+</iframe>
+
+<script>
+    window.addEventListener("load", function () {
+        var frame     = document.querySelector("iframe");
+        var btnPrev   = document.getElementById("btn-prev");
+        var btnNext   = document.getElementById("btn-next");
+        var spanTitle = document.getElementById("frame-title");
+
+        var player = frame.contentWindow.sozi.player;
+
+        spanTitle.innerHTML = player.currentFrame.title;
+
+        btnPrev.addEventListener("click", function () {
+            player.moveToPrevious();
+        }, false);
+
+        btnNext.addEventListener("click", function () {
+            player.moveToNext();
+        }, false);
+
+        player.addListener("frameChange", function () {
+            spanTitle.innerHTML = player.currentFrame.title;
+        });
+    }, false);
+</script>
