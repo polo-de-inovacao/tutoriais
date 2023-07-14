@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="refresh" content="0; url=TUTORIAL_RELATORIOS_POLO_IFES.sozi.html" />
-
     <!-- Incluir a biblioteca Tone.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.58/Tone.min.js"></script>
 
@@ -13,6 +11,11 @@
         // tocar assim que o buffer estiver carregado
         player.autostart = true;
         Tone.start();
+
+        // Redirecionar para a outra página depois de 5 segundos
+        setTimeout(() => {
+            window.location.href = "TUTORIAL_RELATORIOS_POLO_IFES.sozi.html";
+        }, 5000);  // 5000 milissegundos = 5 segundos
     });
     </script>
 </head>
