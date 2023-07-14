@@ -12,7 +12,11 @@
         const player = new Tone.Player("Study_And_Relax.mp3").toDestination();
         // tocar assim que o buffer estiver carregado
         player.autostart = true;
+        Tone.start();
     });
     </script>
 </head>
+<body>
+    <!-- Removi a tag <audio> antiga, já que agora estamos usando a biblioteca Tone.js para reproduzir o áudio -->
+</body>
 </html>
